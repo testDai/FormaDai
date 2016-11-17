@@ -84,7 +84,7 @@ namespace FormaDai
             return modules;
         }
 
-        public bool CreerModule(string intitule, string description, string nbJour)
+        public bool AjouterModule(string intitule, string description, string nbJour)
         {
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {

@@ -101,8 +101,7 @@ namespace FormaDai
                 try
                 {
                     maConnexion.Open();
-                    //SqlParameter paramNom = new SqlParameter("@nom", System.Data.SqlDbType.VarChar);
-                    
+                    SqlParameter paramNom = new SqlParameter("@nom", System.Data.SqlDbType.VarChar);
                     SqlParameter paramPrenom = new SqlParameter("@prenom", System.Data.SqlDbType.VarChar);
                     SqlParameter paramMail = new SqlParameter("@mail", System.Data.SqlDbType.VarChar);
                     SqlParameter paramCivilite = new SqlParameter("@civilite", System.Data.SqlDbType.VarChar);
@@ -114,8 +113,7 @@ namespace FormaDai
                     SqlParameter paramEstAdmin = new SqlParameter("@estAdmin", System.Data.SqlDbType.Bit);
                     using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
                     {
-                        //                        paramNom.Value = nom;
-                        maCommande.Parameters.Add(new SqlParameter("@nom", nom));
+                        paramNom.Value = nom;
                         paramPrenom.Value = prenom;
                         paramMail.Value = mail;
                         paramCivilite.Value = civilite;
@@ -126,7 +124,7 @@ namespace FormaDai
                         paramTelephone.Value = telephone;
                         paramEstAdmin.Value = estAdmin;
 
-                        //maCommande.Parameters.Add(paramNom);
+                        maCommande.Parameters.Add(paramNom);
                         maCommande.Parameters.Add(paramPrenom);
                         maCommande.Parameters.Add(paramMail);
                         maCommande.Parameters.Add(paramCivilite);
