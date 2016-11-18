@@ -1,0 +1,1 @@
+﻿SELECT * FROM Personne INNER JOIN Candidature ON IdPersonne = IdPersonne WHERE IdSession = 1
