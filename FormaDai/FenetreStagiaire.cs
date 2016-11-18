@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FormaDai
 {
-    public partial class FenetreAccueil : Form
+    public partial class FenetreStagiaire : Form
     {
-        public FenetreAccueil()
+        public FenetreStagiaire()
         {
             InitializeComponent();
-        }
-
-        private void btValider_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
