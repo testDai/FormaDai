@@ -34,13 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>Lib\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.Instrumentation">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\DevComponents.Instrumentation.dll</HintPath>
+      <HintPath>Lib\DevComponents.Instrumentation.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.TreeGX">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\DevComponents.TreeGX.dll</HintPath>
+      <HintPath>Lib\DevComponents.TreeGX.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -51,13 +51,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\MetroFramework.dll</HintPath>
+      <HintPath>Lib\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\MetroFramework.Design.dll</HintPath>
+      <HintPath>Lib\MetroFramework.Design.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Fonts">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\MetroFramework.Fonts.dll</HintPath>
+      <HintPath>Lib\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -142,9 +142,7 @@
       <DependentUpon>BdForma.tt</DependentUpon>
     </Compile>
     <Compile Include="SessionServices.cs" />
-    <Compile Include="Welcome.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Welcome.cs" />
     <Compile Include="Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
