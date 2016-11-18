@@ -101,6 +101,12 @@
     <Compile Include="Evaluation.cs">
       <DependentUpon>BdForma.tt</DependentUpon>
     </Compile>
+    <Compile Include="FenetreAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FenetreAccueil.Designer.cs">
+      <DependentUpon>FenetreAccueil.cs</DependentUpon>
+    </Compile>
     <Compile Include="FenetreConnect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +152,9 @@
       <DependentUpon>BdForma.tt</DependentUpon>
     </Compile>
     <Compile Include="SessionServices.cs" />
-    <Compile Include="Welcome.cs" />
-    <Compile Include="Welcome.Designer.cs">
-      <DependentUpon>Welcome.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="FenetreAccueil.resx">
+      <DependentUpon>FenetreAccueil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FenetreConnect.resx">
       <DependentUpon>FenetreConnect.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +173,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Welcome.resx">
-      <DependentUpon>Welcome.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="BdForma.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BdForma.Designer.cs</LastGenOutput>

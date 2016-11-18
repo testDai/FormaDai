@@ -35,26 +35,33 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(87, 63);
+            this.txtLogin.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.Location = new System.Drawing.Point(63, 65);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtLogin.Size = new System.Drawing.Size(165, 26);
             this.txtLogin.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(87, 141);
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(63, 113);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(165, 26);
             this.txtPassword.TabIndex = 1;
             // 
             // btOK
             // 
-            this.btOK.Location = new System.Drawing.Point(100, 206);
+            this.btOK.BackColor = System.Drawing.Color.DimGray;
+            this.btOK.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btOK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btOK.ForeColor = System.Drawing.Color.Black;
+            this.btOK.Location = new System.Drawing.Point(73, 160);
             this.btOK.Name = "btOK";
-            this.btOK.Size = new System.Drawing.Size(75, 23);
+            this.btOK.Size = new System.Drawing.Size(146, 32);
             this.btOK.TabIndex = 2;
-            this.btOK.Text = "OK";
-            this.btOK.UseVisualStyleBackColor = true;
+            this.btOK.Text = "Me Connecter";
+            this.btOK.UseVisualStyleBackColor = false;
             this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
             // FenetreConnect
@@ -65,6 +72,7 @@
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
+            this.DoubleBuffered = true;
             this.Name = "FenetreConnect";
             this.Text = "Form1";
             this.ResumeLayout(false);

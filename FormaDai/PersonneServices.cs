@@ -33,6 +33,37 @@ namespace FormaDai
             p.EstAdmin = (bool)reader["EstAdmin"];
             return p;
         }
+
+        public List<Personne> GetPersonnes()
+        {
+            List<Personne> personnes = new List<Personne>();
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "SELECT * FROM Personne";
+                try
+                {
+                    maConnexion.Open();
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        SqlDataReader maLecture = maCommande.ExecuteReader();
+                        while (maLecture.Read())
+                        {
+                            Personne p = new Personne();
+                            p = PersonneLecture(maLecture);
+                            personnes.Add(p);
+                        }
+                        maLecture.Close();
+                    }
+                    maConnexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return personnes;
+        }
+
         public Personne GetPersonneByIdPw(string mail, string pass)
         {
             Personne p = null;

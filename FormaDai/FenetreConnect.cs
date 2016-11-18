@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevComponents.DotNetBar.Metro;
 
 namespace FormaDai
 {
-    public partial class FenetreConnect : Form
+    public partial class FenetreConnect : MetroForm
     {
         public FenetreConnect()
         {
@@ -19,22 +20,18 @@ namespace FormaDai
 
         private void btOK_Click(object sender, EventArgs e)
         {
-            //PersonneServices s = new PersonneServices();
-            //Personne p = s.GetPersonneByIdPw(txtLogin.Text, txtPassword.Text);
-
-            //if (p == null)
-            //{
-            //    MessageBox.Show("Identifiants incorrects");
-            //}
-
-            //else
-            //{
-            //    //MessageBox.Show("Bienvenue " + p.Prenom);
-            //    FenetreTest fntr = new FenetreTest();
-            //    fntr.ShowDialog();
-            //}
-            FenetreTest fn = new FenetreTest();
-            fn.ShowDialog();
+            PersonneServices s = new PersonneServices();
+            Personne p = s.GetPersonneByIdPw(txtLogin.Text, txtPassword.Text);
+            if (p == null)
+            {
+                MessageBox.Show("Identifiants incorrects");
+            }
+            else
+            {
+                FenetreAccueil fnAcc = new FenetreAccueil(p);
+                this.Hide();
+                fnAcc.Show();
+            }
 
         }
     }
