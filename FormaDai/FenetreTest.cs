@@ -19,12 +19,17 @@ namespace FormaDai
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PersonneServices ms = new PersonneServices();
-            bool res = ms.AjouterPersonne(txt1.Text, txt2.Text, txt3.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, false);
-            if (res == true)
-                MessageBox.Show("YEAH");
-            else
-                MessageBox.Show("ERROR");
+         //string nom = dataGridView1.SelectedCells[1].Value.ToString();
+         //   MessageBox.Show(nom);
+
+      }
+
+        private void FenetreTest_Load(object sender, EventArgs e)
+        {
+            ModuleServices s = new ModuleServices();
+            List<Module> list = s.GetModules();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = list;
         }
     }
 }

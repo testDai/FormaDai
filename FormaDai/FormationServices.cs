@@ -80,5 +80,63 @@ namespace FormaDai
             }
             return formations;
         }
+
+        public bool AjouterFormation(string intitule, string description)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "INSERT INTO Formation (Intitule, Description) VALUES (@intitule, @description)";
+                try
+                {
+                    maConnexion.Open();
+                    SqlParameter paramIntit = new SqlParameter("@intitule", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramDesc = new SqlParameter("@description", System.Data.SqlDbType.VarChar);
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        paramIntit.Value = intitule;
+                        paramDesc.Value = description;
+                        maCommande.Parameters.Add(paramIntit);
+                        maCommande.Parameters.Add(paramDesc);
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
+
+        public bool ModifierFormation(string intitule, string newIntitule, string newDescription)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "UPDATE Formation SET Intitule=@newIntitule, Description=@newDescription WHERE Intitule=intitule";
+                try
+                {
+                    maConnexion.Open();
+                    SqlParameter paramIntit = new SqlParameter("@intitule", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramDesc = new SqlParameter("@description", System.Data.SqlDbType.VarChar);
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        paramIntit.Value = newIntitule;
+                        paramDesc.Value = newDescription;
+                        maCommande.Parameters.Add(paramIntit);
+                        maCommande.Parameters.Add(paramDesc);
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
     }
 }

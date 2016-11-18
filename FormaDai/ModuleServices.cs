@@ -60,7 +60,7 @@ namespace FormaDai
             List<Module> modules = new List<Module>();
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "SELECT * FROM Formation";
+                string maRequete = "SELECT * FROM Module";
                 try
                 {
                     maConnexion.Open();
@@ -103,6 +103,30 @@ namespace FormaDai
                         maCommande.Parameters.Add(paramNbJour);
                         maCommande.Parameters.Add(paramIntit);
                         maCommande.Parameters.Add(paramDesc);
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
+
+        public bool SupprModule(string intitule)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "DELETE * FROM Module WHERE Intitule='@intitule'";
+                try
+                {
+                    maConnexion.Open();
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        maCommande.Parameters.Add(new SqlParameter("@intitule", intitule));
                         maCommande.ExecuteNonQuery();
                     }
                     maConnexion.Close();
