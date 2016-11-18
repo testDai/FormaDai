@@ -62,13 +62,13 @@ namespace FormaDai
             }
             return p;
         }
-        //Methode pour afficher les personnes qui ont candidaté à une session.
+        //Methode pour afficher les personnes qui ont candidaté à une session. Ni la requête SQL ni la méthode n'ont été vérifiées.
         public List<Personne> GetPersonneBySession(int idSession)
         {
             List<Personne> sessionPersonnes = null;
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "SELECT * FROM Personne INNER JOIN Candidature ON IdPersonne= IdSession WHERE IdSession = @idSession";
+                string maRequete = "SELECT * FROM Personne INNER JOIN Candidature ON IdPersonne = IdPersonne WHERE IdSession = @idSession";
                 try
                 {
                     maConnexion.Open();
