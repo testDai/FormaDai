@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -40,6 +49,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Projects\TrappeMailSender\TrappeMailSenderwf\Lib\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -85,11 +103,11 @@
     <Compile Include="FenetreConnect.Designer.cs">
       <DependentUpon>FenetreConnect.cs</DependentUpon>
     </Compile>
-    <Compile Include="FenetreAccueil.cs">
+    <Compile Include="FenetreStagiaire.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FenetreAccueil.Designer.cs">
-      <DependentUpon>FenetreAccueil.cs</DependentUpon>
+    <Compile Include="FenetreStagiaire.Designer.cs">
+      <DependentUpon>FenetreStagiaire.cs</DependentUpon>
     </Compile>
     <Compile Include="FenetreTest.cs">
       <SubType>Form</SubType>
@@ -124,11 +142,17 @@
       <DependentUpon>BdForma.tt</DependentUpon>
     </Compile>
     <Compile Include="SessionServices.cs" />
+    <Compile Include="Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FenetreConnect.resx">
       <DependentUpon>FenetreConnect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FenetreAccueil.resx">
-      <DependentUpon>FenetreAccueil.cs</DependentUpon>
+    <EmbeddedResource Include="FenetreStagiaire.resx">
+      <DependentUpon>FenetreStagiaire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FenetreTest.resx">
       <DependentUpon>FenetreTest.cs</DependentUpon>
@@ -142,6 +166,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="BdForma.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BdForma.Designer.cs</LastGenOutput>
