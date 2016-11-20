@@ -177,5 +177,80 @@ namespace FormaDai
             }
             return false;
         }
+        public bool ModifierPersonne(string email, string newNom, string newPrenom, string newMail, string newCivilite, string newAdresse, string newCodePostal, string newVille, string newPassword, string newTelephone)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "UPDATE Personne SET Nom = @nom, Prenom = @prenom, Mail = @mail, Civilite = @civilite, Adresse = @adresse, CodePostal = @codePostal, Ville = @ville, Password = @password, Telephone = @telephone WHERE Email = email";
+                try
+                {
+                    maConnexion.Open();
+                    SqlParameter paramNom = new SqlParameter("@nom", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramPrenom = new SqlParameter("@prenom", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramMail = new SqlParameter("@mail", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramCivilite = new SqlParameter("@civilite", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramAdresse = new SqlParameter("@adresse", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramCodePostal = new SqlParameter("@codePostal", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramVille = new SqlParameter("@ville", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramPassword = new SqlParameter("@password", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramTelephone = new SqlParameter("@telephone", System.Data.SqlDbType.VarChar);
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        paramNom.Value = newNom;
+                        paramPrenom.Value = newPrenom;
+                        paramMail.Value = newMail;
+                        paramCivilite.Value = newCivilite;
+                        paramAdresse.Value = newAdresse;
+                        paramCodePostal.Value = newCodePostal;
+                        paramVille.Value = newVille;
+                        paramPassword.Value = newPassword;
+                        paramTelephone.Value = newTelephone;
+
+                        maCommande.Parameters.Add(paramNom);
+                        maCommande.Parameters.Add(paramPrenom);
+                        maCommande.Parameters.Add(paramMail);
+                        maCommande.Parameters.Add(paramCivilite);
+                        maCommande.Parameters.Add(paramAdresse);
+                        maCommande.Parameters.Add(paramCodePostal);
+                        maCommande.Parameters.Add(paramVille);
+                        maCommande.Parameters.Add(paramPassword);
+                        maCommande.Parameters.Add(paramTelephone);
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
+
+        public bool SupprPersonne(string nom, string mail)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "DELETE * FROM Personne WHERE Nom = @nom AND Mail = @mail";
+                try
+                {
+                    maConnexion.Open();
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        maCommande.Parameters.Add(new SqlParameter("@nom", nom));
+                        maCommande.Parameters.Add(new SqlParameter("@mail", mail));
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
     }
 }

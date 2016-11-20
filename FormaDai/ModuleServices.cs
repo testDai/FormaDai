@@ -54,7 +54,6 @@ namespace FormaDai
             return m;
         }
 
-
         public List<Module> GetModules()
         {
             List<Module> modules = new List<Module>();
@@ -103,6 +102,38 @@ namespace FormaDai
                         maCommande.Parameters.Add(paramNbJour);
                         maCommande.Parameters.Add(paramIntit);
                         maCommande.Parameters.Add(paramDesc);
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
+
+        public bool ModifModule(string intitule, string newIntitule, string newDescription, int newNbJour)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "UPDATE Formation SET Intitule = @newIntitule, Description = @newDescription, NbJour = @newNbJour WHERE Intitule=intitule";
+                try
+                {
+                    maConnexion.Open();
+                    SqlParameter paramIntit = new SqlParameter("@intitule", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramDesc = new SqlParameter("@description", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramNbJour = new SqlParameter("@nbJour", System.Data.SqlDbType.Int);
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        paramIntit.Value = newIntitule;
+                        paramDesc.Value = newDescription;
+                        paramNbJour.Value = newNbJour;
+                        maCommande.Parameters.Add(paramIntit);
+                        maCommande.Parameters.Add(paramDesc);
+                        maCommande.Parameters.Add(paramNbJour);
                         maCommande.ExecuteNonQuery();
                     }
                     maConnexion.Close();

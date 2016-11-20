@@ -138,5 +138,29 @@ namespace FormaDai
             }
             return false;
         }
+
+        public bool SupprFormation(string intitule)
+        {
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "DELETE * FROM Formation WHERE Intitule='@intitule'";
+                try
+                {
+                    maConnexion.Open();
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        maCommande.Parameters.Add(new SqlParameter("@intitule", intitule));
+                        maCommande.ExecuteNonQuery();
+                    }
+                    maConnexion.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return false;
+        }
     }
 }
