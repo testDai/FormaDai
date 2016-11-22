@@ -181,6 +181,7 @@
       <DependentUpon>BdForma.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Formation.datasource" />
     <None Include="Properties\DataSources\Module.datasource" />
     <None Include="Properties\DataSources\Personne.datasource" />
     <None Include="Properties\Settings.settings">

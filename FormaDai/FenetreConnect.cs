@@ -32,7 +32,6 @@ namespace FormaDai
                 this.Hide();
                 fnAcc.Show();
             }
-
         }
     }
 }
