@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.51">
-      <HintPath>..\..\..\..\..\..\Program Files\Bunifu Technologies\Bunifu Framework Manager\bin\updates\Bunifu_UI_1.5\Bunifu_UI_v1.51.dll</HintPath>
-    </Reference>
     <Reference Include="DevComponents.DotNetBar2">
       <HintPath>Lib\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
