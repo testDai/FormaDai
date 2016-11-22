@@ -143,7 +143,7 @@ namespace FormaDai
         {
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "DELETE * FROM Formation WHERE Intitule='@intitule'";
+                string maRequete = "DELETE FROM Formation WHERE Intitule=@intitule";
                 try
                 {
                     maConnexion.Open();
@@ -161,6 +161,28 @@ namespace FormaDai
                 }
             }
             return false;
+        }
+
+        public void SupprLigne(DataGridView dataGridView2)
+        {
+            try
+            {
+                FormationServices fServ = new FormationServices();
+                string intitule = dataGridView2.SelectedCells[0].Value.ToString();
+                if (fServ.SupprFormation(intitule) == true)
+                {
+                    MessageBox.Show(intitule);
+                    MessageBox.Show("Formation supprimee avec succes");
+                    dataGridView2.DataSource = null;
+                    dataGridView2.DataSource = fServ.GetFormations();
+                }
+                else
+                    MessageBox.Show("Erreur lors de la suppression");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Veuillez selectionner la ligne a supprimer");
+            }
         }
     }
 }

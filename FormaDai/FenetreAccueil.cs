@@ -76,5 +76,22 @@ namespace FormaDai
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
         }
+
+        private void btDeconnexion_Click(object sender, EventArgs e)
+        {
+            FenetreConnect fn = new FenetreConnect();
+            this.Close();
+            fn.Show();
+        }
+
+        private void btSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Visible == true) // Stagiaire
+                new PersonneServices().SupprLigne(dataGridView1);
+            else if (dataGridView2.Visible == true) // Formation
+                new FormationServices().SupprLigne(dataGridView2);
+            else if (dataGridView3.Visible == true) // Module
+                new ModuleServices().SupprLigne(dataGridView3);
+        }
     }
 }

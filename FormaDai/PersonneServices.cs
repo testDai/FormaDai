@@ -232,7 +232,7 @@ namespace FormaDai
         {
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "DELETE * FROM Personne WHERE Nom = @nom AND Mail = @mail";
+                string maRequete = "DELETE FROM Personne WHERE Nom = @nom AND Mail = @mail";
                 try
                 {
                     maConnexion.Open();
@@ -251,6 +251,28 @@ namespace FormaDai
                 }
             }
             return false;
+        }
+
+        public void SupprLigne(DataGridView dataGridView1)
+        {
+            try
+            {
+                PersonneServices pServ = new PersonneServices();
+                string nom = dataGridView1.SelectedCells[0].Value.ToString();
+                string mail = dataGridView1.SelectedCells[2].Value.ToString();
+                if (pServ.SupprPersonne(nom, mail) == true)
+                {
+                    MessageBox.Show("Personne supprimee avec succes");
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = pServ.GetPersonnes();
+                }
+                else
+                    MessageBox.Show("Erreur lors de la suppression");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Veuillez selectionner la ligne a supprimer");
+            }
         }
     }
 }
