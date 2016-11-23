@@ -43,9 +43,15 @@ namespace FormaDai
             List<Module> m = mServices.GetModules();
             dataGridView3.DataSource = null;
             dataGridView3.DataSource = m;
+            
+            SessionServices sServices = new SessionServices();
+            List<Session> s = sServices.GetSessions();
+            dataGridView4.DataSource = null;
+            dataGridView4.DataSource = s;
 
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
 
             //Remplie le label de Bienvenue
             lbBienvenue.Text = lbBienvenue.Text + " " + Personne.Civilite + " " + Personne.Nom + " " + Personne.Prenom;
@@ -61,6 +67,7 @@ namespace FormaDai
             dataGridView1.Visible = false; ;
             dataGridView2.Visible = true; ;
             dataGridView3.Visible = false; ;
+            dataGridView4.Visible = false;
         }
 
         private void btModule_Click(object sender, EventArgs e)
@@ -68,6 +75,7 @@ namespace FormaDai
             dataGridView1.Visible = false; ;
             dataGridView2.Visible = false; ;
             dataGridView3.Visible = true;
+            dataGridView4.Visible = false;
         }
 
         private void btStagiaire_Click(object sender, EventArgs e)
@@ -75,6 +83,15 @@ namespace FormaDai
             dataGridView1.Visible = true;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
+        }
+
+        private void btSession_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView4.Visible = true;
         }
 
         private void btDeconnexion_Click(object sender, EventArgs e)
@@ -92,6 +109,8 @@ namespace FormaDai
                 new FormationServices().SupprLigne(dataGridView2);
             else if (dataGridView3.Visible == true) // Module
                 new ModuleServices().SupprLigne(dataGridView3);
+            else if (dataGridView4.Visible == true) // Sessions
+                new SessionServices().SupprLigne(dataGridView4);
         }
     }
 }
