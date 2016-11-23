@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e808770715d4455085c99f65d7fb2b10" Name="Diagram1" >
+        <EntityTypeShape EntityType="BdForma.Personne" Width="1.5" PointX="6.75" PointY="1.125" />
+        <EntityTypeShape EntityType="BdForma.Module" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="BdForma.Formation" Width="1.5" PointX="0.5" PointY="3.375" />
+        <AssociationConnector Association="BdForma.ModuleFormation" />
+        <EntityTypeShape EntityType="BdForma.Session" Width="1.5" PointX="4.125" PointY="3.5" />
+        <AssociationConnector Association="BdForma.FormationSession" />
+        <EntityTypeShape EntityType="BdForma.Seance" Width="1.5" PointX="3.375" PointY="0.5" />
+        <AssociationConnector Association="BdForma.ModuleSeance" />
+        <AssociationConnector Association="BdForma.SessionSeance" />
+        <AssociationConnector Association="BdForma.Candidature" />
+        <AssociationConnector Association="BdForma.EvaluationFormateur" />
+        <EntityTypeShape EntityType="BdForma.Formateur" Width="1.5" PointX="7.375" PointY="5.625" />
+        <AssociationConnector Association="BdForma.PersonneFormateur" />
+        <EntityTypeShape EntityType="BdForma.Evaluation" Width="1.5" PointX="2.125" PointY="4.875" />
+        <AssociationConnector Association="BdForma.EvaluationSession" />
+        <AssociationConnector Association="BdForma.EvaluationModule" />
+        <AssociationConnector Association="BdForma.Note" />
+        <AssociationConnector Association="BdForma.Intervenant" />
+        <AssociationConnector Association="BdForma.SeanceFormateur" />
+        <EntityTypeShape EntityType="BdForma.Projet" Width="1.5" PointX="4" PointY="7.25" />
+        <AssociationConnector Association="BdForma.ProjetFormateur" />
+        <AssociationConnector Association="BdForma.ProjetSession" />
+        <EntityTypeShape EntityType="BdForma.Equipe" Width="1.5" PointX="5.875" PointY="7.875" />
+        <AssociationConnector Association="BdForma.EquipeProjet" />
+        <AssociationConnector Association="BdForma.Membre" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
