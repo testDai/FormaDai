@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BdForma.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BdFormaStoreContainer">
+    <EntitySet Name="Personne" EntityType="BdForma.Store.Personne" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Module" EntityType="BdForma.Store.Module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Formation" EntityType="BdForma.Store.Formation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Session" EntityType="BdForma.Store.Session" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Seance" EntityType="BdForma.Store.Seance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Formateur" EntityType="BdForma.Store.Formateur" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Evaluation" EntityType="BdForma.Store.Evaluation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Projet" EntityType="BdForma.Store.Projet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Equipe" EntityType="BdForma.Store.Equipe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModuleFormation" EntityType="BdForma.Store.ModuleFormation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Candidature" EntityType="BdForma.Store.Candidature" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Note" EntityType="BdForma.Store.Note" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Intervenant" EntityType="BdForma.Store.Intervenant" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Membre" EntityType="BdForma.Store.Membre" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ModuleFormation_Module" Association="BdForma.Store.FK_ModuleFormation_Module">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="ModuleFormation" EntitySet="ModuleFormation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleFormation_Formation" Association="BdForma.Store.FK_ModuleFormation_Formation">
+      <End Role="Formation" EntitySet="Formation" />
+      <End Role="ModuleFormation" EntitySet="ModuleFormation" />
+    </AssociationSet>
+    <AssociationSet Name="FormationSession" Association="BdForma.Store.FormationSession">
+      <End Role="Formation" EntitySet="Formation" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="ModuleSeance" Association="BdForma.Store.ModuleSeance">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="Seance" EntitySet="Seance" />
+    </AssociationSet>
+    <AssociationSet Name="SessionSeance" Association="BdForma.Store.SessionSeance">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="Seance" EntitySet="Seance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidature_Personne" Association="BdForma.Store.FK_Candidature_Personne">
+      <End Role="Personne" EntitySet="Personne" />
+      <End Role="Candidature" EntitySet="Candidature" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidature_Session" Association="BdForma.Store.FK_Candidature_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="Candidature" EntitySet="Candidature" />
+    </AssociationSet>
+    <AssociationSet Name="PersonneFormateur" Association="BdForma.Store.PersonneFormateur">
+      <End Role="Personne" EntitySet="Personne" />
+      <End Role="Formateur" EntitySet="Formateur" />
+    </AssociationSet>
+    <AssociationSet Name="EvaluationSession" Association="BdForma.Store.EvaluationSession">
+      <End Role="Evaluation" EntitySet="Evaluation" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="EvaluationModule" Association="BdForma.Store.EvaluationModule">
+      <End Role="Evaluation" EntitySet="Evaluation" />
+      <End Role="Module" EntitySet="Module" />
+    </AssociationSet>
+    <AssociationSet Name="EvaluationFormateur" Association="BdForma.Store.EvaluationFormateur">
+      <End Role="Evaluation" EntitySet="Evaluation" />
+      <End Role="Formateur" EntitySet="Formateur" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Note_Evaluation" Association="BdForma.Store.FK_Note_Evaluation">
+      <End Role="Evaluation" EntitySet="Evaluation" />
+      <End Role="Note" EntitySet="Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Note_Personne" Association="BdForma.Store.FK_Note_Personne">
+      <End Role="Personne" EntitySet="Personne" />
+      <End Role="Note" EntitySet="Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Intervenant_Formateur" Association="BdForma.Store.FK_Intervenant_Formateur">
+      <End Role="Formateur" EntitySet="Formateur" />
+      <End Role="Intervenant" EntitySet="Intervenant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Intervenant_Module" Association="BdForma.Store.FK_Intervenant_Module">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="Intervenant" EntitySet="Intervenant" />
+    </AssociationSet>
+    <AssociationSet Name="SeanceFormateur" Association="BdForma.Store.SeanceFormateur">
+      <End Role="Seance" EntitySet="Seance" />
+      <End Role="Formateur" EntitySet="Formateur" />
+    </AssociationSet>
+    <AssociationSet Name="ProjetFormateur" Association="BdForma.Store.ProjetFormateur">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Formateur" EntitySet="Formateur" />
+    </AssociationSet>
+    <AssociationSet Name="ProjetSession" Association="BdForma.Store.ProjetSession">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="EquipeProjet" Association="BdForma.Store.EquipeProjet">
+      <End Role="Equipe" EntitySet="Equipe" />
+      <End Role="Projet" EntitySet="Projet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Membre_Equipe" Association="BdForma.Store.FK_Membre_Equipe">
+      <End Role="Equipe" EntitySet="Equipe" />
+      <End Role="Membre" EntitySet="Membre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Membre_Personne" Association="BdForma.Store.FK_Membre_Personne">
+      <End Role="Personne" EntitySet="Personne" />
+      <End Role="Membre" EntitySet="Membre" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Personne">
+    <Key>
+      <PropertyRef Name="IdPersonne" />
+    </Key>
+    <Property Name="IdPersonne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Civilite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CodePostal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ville" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EstAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="IdModule" />
+    </Key>
+    <Property Name="IdModule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Intitule" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NbJour" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Formation">
+    <Key>
+      <PropertyRef Name="IdFormation" />
+    </Key>
+    <Property Name="IdFormation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Intitule" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="IdSession" />
+    </Key>
+    <Property Name="IdSession" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFormation" Type="int" Nullable="false" />
+    <Property Name="DateDebut" Type="datetime" Nullable="false" />
+    <Property Name="DateFin" Type="datetime" Nullable="false" />
+    <Property Name="DateDebutInscription" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Seance">
+    <Key>
+      <PropertyRef Name="IdSeance" />
+    </Key>
+    <Property Name="IdSeance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdModule" Type="int" Nullable="false" />
+    <Property Name="IdSession" Type="int" Nullable="false" />
+    <Property Name="IdFormateur" Type="int" Nullable="false" />
+    <Property Name="Jour" Type="datetime" Nullable="false" />
+    <Property Name="Contenu" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Formateur">
+    <Key>
+      <PropertyRef Name="IdFormateur" />
+    </Key>
+    <Property Name="IdFormateur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteWeb" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Personne_IdPersonne" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Evaluation">
+    <Key>
+      <PropertyRef Name="IdEvaluation" />
+    </Key>
+    <Property Name="IdEvaluation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSession" Type="int" Nullable="false" />
+    <Property Name="IdModule" Type="int" Nullable="false" />
+    <Property Name="IdFormateur" Type="int" Nullable="false" />
+    <Property Name="DateEffet" Type="datetime" Nullable="false" />
+    <Property Name="Commentaire" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Projet">
+    <Key>
+      <PropertyRef Name="IdProjet" />
+    </Key>
+    <Property Name="IdProjet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFormateur" Type="int" Nullable="false" />
+    <Property Name="IdSession" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="DateFin" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Equipe">
+    <Key>
+      <PropertyRef Name="IdEquipe" />
+    </Key>
+    <Property Name="IdEquipe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProjet" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Logo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateCreation" Type="datetime" Nullable="false" />
+    <Property Name="EstCreateur" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModuleFormation">
+    <Key>
+      <PropertyRef Name="Module_IdModule" />
+      <PropertyRef Name="Formation_IdFormation" />
+    </Key>
+    <Property Name="Module_IdModule" Type="int" Nullable="false" />
+    <Property Name="Formation_IdFormation" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Candidature">
+    <Key>
+      <PropertyRef Name="Personne_IdPersonne" />
+      <PropertyRef Name="Session_IdSession" />
+    </Key>
+    <Property Name="Personne_IdPersonne" Type="int" Nullable="false" />
+    <Property Name="Session_IdSession" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="Evaluation_IdEvaluation" />
+      <PropertyRef Name="Personne_IdPersonne" />
+    </Key>
+    <Property Name="Evaluation_IdEvaluation" Type="int" Nullable="false" />
+    <Property Name="Personne_IdPersonne" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Intervenant">
+    <Key>
+      <PropertyRef Name="Formateur_IdFormateur" />
+      <PropertyRef Name="Module_IdModule" />
+    </Key>
+    <Property Name="Formateur_IdFormateur" Type="int" Nullable="false" />
+    <Property Name="Module_IdModule" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Membre">
+    <Key>
+      <PropertyRef Name="Equipe_IdEquipe" />
+      <PropertyRef Name="Personne_IdPersonne" />
+    </Key>
+    <Property Name="Equipe_IdEquipe" Type="int" Nullable="false" />
+    <Property Name="Personne_IdPersonne" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FormationSession">
+    <End Role="Formation" Type="BdForma.Store.Formation" Multiplicity="1" />
+    <End Role="Session" Type="BdForma.Store.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formation">
+        <PropertyRef Name="IdFormation" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="IdFormation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModuleSeance">
+    <End Role="Module" Type="BdForma.Store.Module" Multiplicity="1" />
+    <End Role="Seance" Type="BdForma.Store.Seance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="IdModule" />
+      </Principal>
+      <Dependent Role="Seance">
+        <PropertyRef Name="IdModule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SessionSeance">
+    <End Role="Session" Type="BdForma.Store.Session" Multiplicity="1" />
+    <End Role="Seance" Type="BdForma.Store.Seance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="IdSession" />
+      </Principal>
+      <Dependent Role="Seance">
+        <PropertyRef Name="IdSession" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonneFormateur">
+    <End Role="Personne" Type="BdForma.Store.Personne" Multiplicity="1" />
+    <End Role="Formateur" Type="BdForma.Store.Formateur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personne">
+        <PropertyRef Name="IdPersonne" />
+      </Principal>
+      <Dependent Role="Formateur">
+        <PropertyRef Name="Personne_IdPersonne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EvaluationSession">
+    <End Role="Evaluation" Type="BdForma.Store.Evaluation" Multiplicity="*" />
+    <End Role="Session" Type="BdForma.Store.Session" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="IdSession" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="IdSession" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EvaluationModule">
+    <End Role="Evaluation" Type="BdForma.Store.Evaluation" Multiplicity="*" />
+    <End Role="Module" Type="BdForma.Store.Module" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="IdModule" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="IdModule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EvaluationFormateur">
+    <End Role="Evaluation" Type="BdForma.Store.Evaluation" Multiplicity="*" />
+    <End Role="Formateur" Type="BdForma.Store.Formateur" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Formateur">
+        <PropertyRef Name="IdFormateur" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="IdFormateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SeanceFormateur">
+    <End Role="Seance" Type="BdForma.Store.Seance" Multiplicity="*" />
+    <End Role="Formateur" Type="BdForma.Store.Formateur" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Formateur">
+        <PropertyRef Name="IdFormateur" />
+      </Principal>
+      <Dependent Role="Seance">
+        <PropertyRef Name="IdFormateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjetFormateur">
+    <End Role="Projet" Type="BdForma.Store.Projet" Multiplicity="*" />
+    <End Role="Formateur" Type="BdForma.Store.Formateur" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Formateur">
+        <PropertyRef Name="IdFormateur" />
+      </Principal>
+      <Dependent Role="Projet">
+        <PropertyRef Name="IdFormateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjetSession">
+    <End Role="Projet" Type="BdForma.Store.Projet" Multiplicity="*" />
+    <End Role="Session" Type="BdForma.Store.Session" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="IdSession" />
+      </Principal>
+      <Dependent Role="Projet">
+        <PropertyRef Name="IdSession" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EquipeProjet">
+    <End Role="Equipe" Type="BdForma.Store.Equipe" Multiplicity="*" />
+    <End Role="Projet" Type="BdForma.Store.Projet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="IdProjet" />
+      </Principal>
+      <Dependent Role="Equipe">
+        <PropertyRef Name="IdProjet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleFormation_Module">
+    <End Role="Module" Type="BdForma.Store.Module" Multiplicity="1" />
+    <End Role="ModuleFormation" Type="BdForma.Store.ModuleFormation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="IdModule" />
+      </Principal>
+      <Dependent Role="ModuleFormation">
+        <PropertyRef Name="Module_IdModule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleFormation_Formation">
+    <End Role="ModuleFormation" Type="BdForma.Store.ModuleFormation" Multiplicity="*" />
+    <End Role="Formation" Type="BdForma.Store.Formation" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Formation">
+        <PropertyRef Name="IdFormation" />
+      </Principal>
+      <Dependent Role="ModuleFormation">
+        <PropertyRef Name="Formation_IdFormation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidature_Personne">
+    <End Role="Personne" Type="BdForma.Store.Personne" Multiplicity="1" />
+    <End Role="Candidature" Type="BdForma.Store.Candidature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personne">
+        <PropertyRef Name="IdPersonne" />
+      </Principal>
+      <Dependent Role="Candidature">
+        <PropertyRef Name="Personne_IdPersonne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidature_Session">
+    <End Role="Candidature" Type="BdForma.Store.Candidature" Multiplicity="*" />
+    <End Role="Session" Type="BdForma.Store.Session" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="IdSession" />
+      </Principal>
+      <Dependent Role="Candidature">
+        <PropertyRef Name="Session_IdSession" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Note_Evaluation">
+    <End Role="Evaluation" Type="BdForma.Store.Evaluation" Multiplicity="1" />
+    <End Role="Note" Type="BdForma.Store.Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evaluation">
+        <PropertyRef Name="IdEvaluation" />
+      </Principal>
+      <Dependent Role="Note">
+        <PropertyRef Name="Evaluation_IdEvaluation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Note_Personne">
+    <End Role="Note" Type="BdForma.Store.Note" Multiplicity="*" />
+    <End Role="Personne" Type="BdForma.Store.Personne" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Personne">
+        <PropertyRef Name="IdPersonne" />
+      </Principal>
+      <Dependent Role="Note">
+        <PropertyRef Name="Personne_IdPersonne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Intervenant_Formateur">
+    <End Role="Formateur" Type="BdForma.Store.Formateur" Multiplicity="1" />
+    <End Role="Intervenant" Type="BdForma.Store.Intervenant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Formateur">
+        <PropertyRef Name="IdFormateur" />
+      </Principal>
+      <Dependent Role="Intervenant">
+        <PropertyRef Name="Formateur_IdFormateur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Intervenant_Module">
+    <End Role="Intervenant" Type="BdForma.Store.Intervenant" Multiplicity="*" />
+    <End Role="Module" Type="BdForma.Store.Module" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="IdModule" />
+      </Principal>
+      <Dependent Role="Intervenant">
+        <PropertyRef Name="Module_IdModule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Membre_Equipe">
+    <End Role="Equipe" Type="BdForma.Store.Equipe" Multiplicity="1" />
+    <End Role="Membre" Type="BdForma.Store.Membre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipe">
+        <PropertyRef Name="IdEquipe" />
+      </Principal>
+      <Dependent Role="Membre">
+        <PropertyRef Name="Equipe_IdEquipe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Membre_Personne">
+    <End Role="Membre" Type="BdForma.Store.Membre" Multiplicity="*" />
+    <End Role="Personne" Type="BdForma.Store.Personne" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Personne">
+        <PropertyRef Name="IdPersonne" />
+      </Principal>
+      <Dependent Role="Membre">
+        <PropertyRef Name="Personne_IdPersonne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BdFormaStoreContainer" CdmEntityContainer="BdFormaContainer">
+    <EntitySetMapping Name="Personne">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Personne)">
+        <MappingFragment StoreEntitySet="Personne">
+          <ScalarProperty Name="IdPersonne" ColumnName="IdPersonne" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Civilite" ColumnName="Civilite" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="EstAdmin" ColumnName="EstAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Module">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Module)">
+        <MappingFragment StoreEntitySet="Module">
+          <ScalarProperty Name="IdModule" ColumnName="IdModule" />
+          <ScalarProperty Name="Intitule" ColumnName="Intitule" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NbJour" ColumnName="NbJour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formation">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Formation)">
+        <MappingFragment StoreEntitySet="Formation">
+          <ScalarProperty Name="IdFormation" ColumnName="IdFormation" />
+          <ScalarProperty Name="Intitule" ColumnName="Intitule" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Session">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Session)">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="IdSession" ColumnName="IdSession" />
+          <ScalarProperty Name="IdFormation" ColumnName="IdFormation" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="DateDebutInscription" ColumnName="DateDebutInscription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seance">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Seance)">
+        <MappingFragment StoreEntitySet="Seance">
+          <ScalarProperty Name="IdSeance" ColumnName="IdSeance" />
+          <ScalarProperty Name="IdModule" ColumnName="IdModule" />
+          <ScalarProperty Name="IdSession" ColumnName="IdSession" />
+          <ScalarProperty Name="IdFormateur" ColumnName="IdFormateur" />
+          <ScalarProperty Name="Jour" ColumnName="Jour" />
+          <ScalarProperty Name="Contenu" ColumnName="Contenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formateur">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Formateur)">
+        <MappingFragment StoreEntitySet="Formateur">
+          <ScalarProperty Name="IdFormateur" ColumnName="IdFormateur" />
+          <ScalarProperty Name="SiteWeb" ColumnName="SiteWeb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evaluation">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Evaluation)">
+        <MappingFragment StoreEntitySet="Evaluation">
+          <ScalarProperty Name="IdEvaluation" ColumnName="IdEvaluation" />
+          <ScalarProperty Name="IdSession" ColumnName="IdSession" />
+          <ScalarProperty Name="IdModule" ColumnName="IdModule" />
+          <ScalarProperty Name="IdFormateur" ColumnName="IdFormateur" />
+          <ScalarProperty Name="DateEffet" ColumnName="DateEffet" />
+          <ScalarProperty Name="Commentaire" ColumnName="Commentaire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projet">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Projet)">
+        <MappingFragment StoreEntitySet="Projet">
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+          <ScalarProperty Name="IdFormateur" ColumnName="IdFormateur" />
+          <ScalarProperty Name="IdSession" ColumnName="IdSession" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipe">
+      <EntityTypeMapping TypeName="IsTypeOf(BdForma.Equipe)">
+        <MappingFragment StoreEntitySet="Equipe">
+          <ScalarProperty Name="IdEquipe" ColumnName="IdEquipe" />
+          <ScalarProperty Name="IdProjet" ColumnName="IdProjet" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+          <ScalarProperty Name="EstCreateur" ColumnName="EstCreateur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ModuleFormation" TypeName="BdForma.ModuleFormation" StoreEntitySet="ModuleFormation">
+      <EndProperty Name="Module">
+        <ScalarProperty Name="IdModule" ColumnName="Module_IdModule" />
+      </EndProperty>
+      <EndProperty Name="Formation">
+        <ScalarProperty Name="IdFormation" ColumnName="Formation_IdFormation" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Candidature" TypeName="BdForma.Candidature" StoreEntitySet="Candidature">
+      <EndProperty Name="Personne">
+        <ScalarProperty Name="IdPersonne" ColumnName="Personne_IdPersonne" />
+      </EndProperty>
+      <EndProperty Name="Session">
+        <ScalarProperty Name="IdSession" ColumnName="Session_IdSession" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonneFormateur" TypeName="BdForma.PersonneFormateur" StoreEntitySet="Formateur">
+      <EndProperty Name="Personne">
+        <ScalarProperty Name="IdPersonne" ColumnName="Personne_IdPersonne" />
+      </EndProperty>
+      <EndProperty Name="Formateur">
+        <ScalarProperty Name="IdFormateur" ColumnName="IdFormateur" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Note" TypeName="BdForma.Note" StoreEntitySet="Note">
+      <EndProperty Name="Evaluation">
+        <ScalarProperty Name="IdEvaluation" ColumnName="Evaluation_IdEvaluation" />
+      </EndProperty>
+      <EndProperty Name="Personne">
+        <ScalarProperty Name="IdPersonne" ColumnName="Personne_IdPersonne" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Intervenant" TypeName="BdForma.Intervenant" StoreEntitySet="Intervenant">
+      <EndProperty Name="Formateur">
+        <ScalarProperty Name="IdFormateur" ColumnName="Formateur_IdFormateur" />
+      </EndProperty>
+      <EndProperty Name="Module">
+        <ScalarProperty Name="IdModule" ColumnName="Module_IdModule" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Membre" TypeName="BdForma.Membre" StoreEntitySet="Membre">
+      <EndProperty Name="Equipe">
+        <ScalarProperty Name="IdEquipe" ColumnName="Equipe_IdEquipe" />
+      </EndProperty>
+      <EndProperty Name="Personne">
+        <ScalarProperty Name="IdPersonne" ColumnName="Personne_IdPersonne" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
