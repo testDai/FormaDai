@@ -171,7 +171,6 @@ namespace FormaDai
                 string intitule = dataGridView2.SelectedCells[0].Value.ToString();
                 if (fServ.SupprFormation(intitule) == true)
                 {
-                    MessageBox.Show(intitule);
                     MessageBox.Show("Formation supprimee avec succes");
                     dataGridView2.DataSource = null;
                     dataGridView2.DataSource = fServ.GetFormations();

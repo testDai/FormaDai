@@ -35,12 +35,14 @@
             this.btFormation = new System.Windows.Forms.Button();
             this.btStagiaire = new System.Windows.Forms.Button();
             this.panelView = new System.Windows.Forms.Panel();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.IdSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Intitule = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSupprimer = new System.Windows.Forms.Button();
             this.btModifier = new System.Windows.Forms.Button();
             this.btCreer = new System.Windows.Forms.Button();
@@ -48,15 +50,16 @@
             this.panelBienvenue = new System.Windows.Forms.Panel();
             this.lbBienvenue = new System.Windows.Forms.Label();
             this.btDeconnexion = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.Intitule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFormationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDebutInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nbJourDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idFormationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intituleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,21 +72,18 @@
             this.telephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.photoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.IdSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFormationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDebutInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFormationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intituleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelBienvenue.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formationBindingSource)).BeginInit();
@@ -107,15 +107,15 @@
             // btSession
             // 
             this.btSession.BackColor = System.Drawing.Color.DimGray;
-            this.btSession.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btSession.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btSession.FlatAppearance.BorderSize = 2;
             this.btSession.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSession.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSession.ForeColor = System.Drawing.Color.White;
-            this.btSession.Location = new System.Drawing.Point(4, 407);
+            this.btSession.Location = new System.Drawing.Point(8, 389);
             this.btSession.Margin = new System.Windows.Forms.Padding(4);
             this.btSession.Name = "btSession";
-            this.btSession.Size = new System.Drawing.Size(224, 112);
+            this.btSession.Size = new System.Drawing.Size(212, 127);
             this.btSession.TabIndex = 3;
             this.btSession.Text = "Sessions";
             this.btSession.UseVisualStyleBackColor = false;
@@ -124,15 +124,15 @@
             // btModule
             // 
             this.btModule.BackColor = System.Drawing.Color.DimGray;
-            this.btModule.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btModule.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btModule.FlatAppearance.BorderSize = 2;
             this.btModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btModule.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btModule.ForeColor = System.Drawing.Color.White;
-            this.btModule.Location = new System.Drawing.Point(4, 271);
+            this.btModule.Location = new System.Drawing.Point(8, 267);
             this.btModule.Margin = new System.Windows.Forms.Padding(4);
             this.btModule.Name = "btModule";
-            this.btModule.Size = new System.Drawing.Size(224, 112);
+            this.btModule.Size = new System.Drawing.Size(212, 125);
             this.btModule.TabIndex = 2;
             this.btModule.Text = "Modules";
             this.btModule.UseVisualStyleBackColor = false;
@@ -141,15 +141,15 @@
             // btFormation
             // 
             this.btFormation.BackColor = System.Drawing.Color.DimGray;
-            this.btFormation.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btFormation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btFormation.FlatAppearance.BorderSize = 2;
             this.btFormation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btFormation.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btFormation.ForeColor = System.Drawing.Color.White;
-            this.btFormation.Location = new System.Drawing.Point(4, 135);
+            this.btFormation.Location = new System.Drawing.Point(8, 136);
             this.btFormation.Margin = new System.Windows.Forms.Padding(4);
             this.btFormation.Name = "btFormation";
-            this.btFormation.Size = new System.Drawing.Size(224, 112);
+            this.btFormation.Size = new System.Drawing.Size(212, 133);
             this.btFormation.TabIndex = 1;
             this.btFormation.Text = "Formations";
             this.btFormation.UseVisualStyleBackColor = false;
@@ -158,15 +158,15 @@
             // btStagiaire
             // 
             this.btStagiaire.BackColor = System.Drawing.Color.DimGray;
-            this.btStagiaire.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btStagiaire.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btStagiaire.FlatAppearance.BorderSize = 2;
             this.btStagiaire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btStagiaire.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btStagiaire.ForeColor = System.Drawing.Color.White;
-            this.btStagiaire.Location = new System.Drawing.Point(4, 4);
+            this.btStagiaire.Location = new System.Drawing.Point(8, 7);
             this.btStagiaire.Margin = new System.Windows.Forms.Padding(4);
             this.btStagiaire.Name = "btStagiaire";
-            this.btStagiaire.Size = new System.Drawing.Size(224, 112);
+            this.btStagiaire.Size = new System.Drawing.Size(212, 131);
             this.btStagiaire.TabIndex = 0;
             this.btStagiaire.Text = "Stagiaires";
             this.btStagiaire.UseVisualStyleBackColor = false;
@@ -188,6 +188,52 @@
             this.panelView.Name = "panelView";
             this.panelView.Size = new System.Drawing.Size(809, 519);
             this.panelView.TabIndex = 1;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdSession,
+            this.idFormationDataGridViewTextBoxColumn1,
+            this.dateDebutDataGridViewTextBoxColumn,
+            this.dateFinDataGridViewTextBoxColumn,
+            this.dateDebutInscriptionDataGridViewTextBoxColumn,
+            this.formationDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView4.DataSource = this.sessionBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(4, 4);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(801, 466);
+            this.dataGridView4.TabIndex = 7;
+            // 
+            // IdSession
+            // 
+            this.IdSession.DataPropertyName = "IdSession";
+            this.IdSession.HeaderText = "IdSession";
+            this.IdSession.Name = "IdSession";
+            this.IdSession.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Intitule";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Intitule";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridView3
             // 
@@ -245,34 +291,18 @@
             this.dataGridView2.Size = new System.Drawing.Size(801, 466);
             this.dataGridView2.TabIndex = 5;
             // 
-            // Intitule
-            // 
-            this.Intitule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Intitule.DataPropertyName = "Intitule";
-            this.Intitule.HeaderText = "Intitule";
-            this.Intitule.Name = "Intitule";
-            this.Intitule.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
             // btSupprimer
             // 
             this.btSupprimer.BackColor = System.Drawing.Color.DimGray;
-            this.btSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSupprimer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btSupprimer.FlatAppearance.BorderSize = 2;
             this.btSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSupprimer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSupprimer.ForeColor = System.Drawing.Color.White;
-            this.btSupprimer.Location = new System.Drawing.Point(545, 474);
+            this.btSupprimer.Location = new System.Drawing.Point(296, 473);
             this.btSupprimer.Margin = new System.Windows.Forms.Padding(4);
             this.btSupprimer.Name = "btSupprimer";
-            this.btSupprimer.Size = new System.Drawing.Size(260, 42);
+            this.btSupprimer.Size = new System.Drawing.Size(144, 42);
             this.btSupprimer.TabIndex = 4;
             this.btSupprimer.Text = "Supprimer";
             this.btSupprimer.UseVisualStyleBackColor = false;
@@ -281,15 +311,15 @@
             // btModifier
             // 
             this.btModifier.BackColor = System.Drawing.Color.DimGray;
-            this.btModifier.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btModifier.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btModifier.FlatAppearance.BorderSize = 2;
             this.btModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btModifier.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btModifier.ForeColor = System.Drawing.Color.White;
-            this.btModifier.Location = new System.Drawing.Point(280, 474);
+            this.btModifier.Location = new System.Drawing.Point(153, 473);
             this.btModifier.Margin = new System.Windows.Forms.Padding(4);
             this.btModifier.Name = "btModifier";
-            this.btModifier.Size = new System.Drawing.Size(257, 42);
+            this.btModifier.Size = new System.Drawing.Size(135, 42);
             this.btModifier.TabIndex = 3;
             this.btModifier.Text = "Modifier";
             this.btModifier.UseVisualStyleBackColor = false;
@@ -297,18 +327,19 @@
             // btCreer
             // 
             this.btCreer.BackColor = System.Drawing.Color.DimGray;
-            this.btCreer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btCreer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btCreer.FlatAppearance.BorderSize = 2;
             this.btCreer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCreer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCreer.ForeColor = System.Drawing.Color.White;
-            this.btCreer.Location = new System.Drawing.Point(4, 474);
+            this.btCreer.Location = new System.Drawing.Point(4, 473);
             this.btCreer.Margin = new System.Windows.Forms.Padding(4);
             this.btCreer.Name = "btCreer";
-            this.btCreer.Size = new System.Drawing.Size(268, 42);
+            this.btCreer.Size = new System.Drawing.Size(141, 42);
             this.btCreer.TabIndex = 2;
             this.btCreer.Text = "Creer";
             this.btCreer.UseVisualStyleBackColor = false;
+            this.btCreer.Click += new System.EventHandler(this.btCreer_Click);
             // 
             // dataGridView1
             // 
@@ -364,11 +395,11 @@
             // btDeconnexion
             // 
             this.btDeconnexion.BackColor = System.Drawing.Color.DimGray;
-            this.btDeconnexion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btDeconnexion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btDeconnexion.FlatAppearance.BorderSize = 2;
             this.btDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeconnexion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeconnexion.ForeColor = System.Drawing.Color.Black;
+            this.btDeconnexion.ForeColor = System.Drawing.Color.White;
             this.btDeconnexion.Location = new System.Drawing.Point(33, 30);
             this.btDeconnexion.Margin = new System.Windows.Forms.Padding(4);
             this.btDeconnexion.Name = "btDeconnexion";
@@ -378,28 +409,56 @@
             this.btDeconnexion.UseVisualStyleBackColor = false;
             this.btDeconnexion.Click += new System.EventHandler(this.btDeconnexion_Click);
             // 
-            // dataGridView4
+            // Intitule
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdSession,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.idFormationDataGridViewTextBoxColumn1,
-            this.dateDebutDataGridViewTextBoxColumn,
-            this.dateFinDataGridViewTextBoxColumn,
-            this.dateDebutInscriptionDataGridViewTextBoxColumn,
-            this.formationDataGridViewTextBoxColumn});
-            this.dataGridView4.DataSource = this.sessionBindingSource;
-            this.dataGridView4.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(801, 466);
-            this.dataGridView4.TabIndex = 7;
+            this.Intitule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Intitule.DataPropertyName = "Intitule";
+            this.Intitule.HeaderText = "Intitule";
+            this.Intitule.Name = "Intitule";
+            this.Intitule.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // idFormationDataGridViewTextBoxColumn1
+            // 
+            this.idFormationDataGridViewTextBoxColumn1.DataPropertyName = "IdFormation";
+            this.idFormationDataGridViewTextBoxColumn1.HeaderText = "IdFormation";
+            this.idFormationDataGridViewTextBoxColumn1.Name = "idFormationDataGridViewTextBoxColumn1";
+            this.idFormationDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateDebutDataGridViewTextBoxColumn
+            // 
+            this.dateDebutDataGridViewTextBoxColumn.DataPropertyName = "DateDebut";
+            this.dateDebutDataGridViewTextBoxColumn.HeaderText = "DateDebut";
+            this.dateDebutDataGridViewTextBoxColumn.Name = "dateDebutDataGridViewTextBoxColumn";
+            this.dateDebutDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateFinDataGridViewTextBoxColumn
+            // 
+            this.dateFinDataGridViewTextBoxColumn.DataPropertyName = "DateFin";
+            this.dateFinDataGridViewTextBoxColumn.HeaderText = "DateFin";
+            this.dateFinDataGridViewTextBoxColumn.Name = "dateFinDataGridViewTextBoxColumn";
+            this.dateFinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDebutInscriptionDataGridViewTextBoxColumn
+            // 
+            this.dateDebutInscriptionDataGridViewTextBoxColumn.DataPropertyName = "DateDebutInscription";
+            this.dateDebutInscriptionDataGridViewTextBoxColumn.HeaderText = "DateDebutInscription";
+            this.dateDebutInscriptionDataGridViewTextBoxColumn.Name = "dateDebutInscriptionDataGridViewTextBoxColumn";
+            this.dateDebutInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // formationDataGridViewTextBoxColumn
+            // 
+            this.formationDataGridViewTextBoxColumn.DataPropertyName = "Formation";
+            this.formationDataGridViewTextBoxColumn.HeaderText = "Formation";
+            this.formationDataGridViewTextBoxColumn.Name = "formationDataGridViewTextBoxColumn";
+            this.formationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sessionBindingSource
             // 
@@ -416,41 +475,6 @@
             // moduleBindingSource
             // 
             this.moduleBindingSource.DataSource = typeof(FormaDai.Module);
-            // 
-            // idFormationDataGridViewTextBoxColumn
-            // 
-            this.idFormationDataGridViewTextBoxColumn.DataPropertyName = "IdFormation";
-            this.idFormationDataGridViewTextBoxColumn.HeaderText = "IdFormation";
-            this.idFormationDataGridViewTextBoxColumn.Name = "idFormationDataGridViewTextBoxColumn";
-            this.idFormationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // intituleDataGridViewTextBoxColumn
-            // 
-            this.intituleDataGridViewTextBoxColumn.DataPropertyName = "Intitule";
-            this.intituleDataGridViewTextBoxColumn.HeaderText = "Intitule";
-            this.intituleDataGridViewTextBoxColumn.Name = "intituleDataGridViewTextBoxColumn";
-            this.intituleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // moduleDataGridViewTextBoxColumn
-            // 
-            this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
-            this.moduleDataGridViewTextBoxColumn.HeaderText = "Module";
-            this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
-            this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sessionDataGridViewTextBoxColumn
-            // 
-            this.sessionDataGridViewTextBoxColumn.DataPropertyName = "Session";
-            this.sessionDataGridViewTextBoxColumn.HeaderText = "Session";
-            this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
-            this.sessionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // formationBindingSource
             // 
@@ -540,63 +564,40 @@
             // 
             this.personneBindingSource.DataSource = typeof(FormaDai.Personne);
             // 
-            // IdSession
+            // idFormationDataGridViewTextBoxColumn
             // 
-            this.IdSession.DataPropertyName = "IdSession";
-            this.IdSession.HeaderText = "IdSession";
-            this.IdSession.Name = "IdSession";
-            this.IdSession.ReadOnly = true;
+            this.idFormationDataGridViewTextBoxColumn.DataPropertyName = "IdFormation";
+            this.idFormationDataGridViewTextBoxColumn.HeaderText = "IdFormation";
+            this.idFormationDataGridViewTextBoxColumn.Name = "idFormationDataGridViewTextBoxColumn";
+            this.idFormationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // intituleDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Intitule";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Intitule";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.intituleDataGridViewTextBoxColumn.DataPropertyName = "Intitule";
+            this.intituleDataGridViewTextBoxColumn.HeaderText = "Intitule";
+            this.intituleDataGridViewTextBoxColumn.Name = "intituleDataGridViewTextBoxColumn";
+            this.intituleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // idFormationDataGridViewTextBoxColumn1
+            // moduleDataGridViewTextBoxColumn
             // 
-            this.idFormationDataGridViewTextBoxColumn1.DataPropertyName = "IdFormation";
-            this.idFormationDataGridViewTextBoxColumn1.HeaderText = "IdFormation";
-            this.idFormationDataGridViewTextBoxColumn1.Name = "idFormationDataGridViewTextBoxColumn1";
-            this.idFormationDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.moduleDataGridViewTextBoxColumn.DataPropertyName = "Module";
+            this.moduleDataGridViewTextBoxColumn.HeaderText = "Module";
+            this.moduleDataGridViewTextBoxColumn.Name = "moduleDataGridViewTextBoxColumn";
+            this.moduleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dateDebutDataGridViewTextBoxColumn
+            // sessionDataGridViewTextBoxColumn
             // 
-            this.dateDebutDataGridViewTextBoxColumn.DataPropertyName = "DateDebut";
-            this.dateDebutDataGridViewTextBoxColumn.HeaderText = "DateDebut";
-            this.dateDebutDataGridViewTextBoxColumn.Name = "dateDebutDataGridViewTextBoxColumn";
-            this.dateDebutDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateFinDataGridViewTextBoxColumn
-            // 
-            this.dateFinDataGridViewTextBoxColumn.DataPropertyName = "DateFin";
-            this.dateFinDataGridViewTextBoxColumn.HeaderText = "DateFin";
-            this.dateFinDataGridViewTextBoxColumn.Name = "dateFinDataGridViewTextBoxColumn";
-            this.dateFinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDebutInscriptionDataGridViewTextBoxColumn
-            // 
-            this.dateDebutInscriptionDataGridViewTextBoxColumn.DataPropertyName = "DateDebutInscription";
-            this.dateDebutInscriptionDataGridViewTextBoxColumn.HeaderText = "DateDebutInscription";
-            this.dateDebutInscriptionDataGridViewTextBoxColumn.Name = "dateDebutInscriptionDataGridViewTextBoxColumn";
-            this.dateDebutInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // formationDataGridViewTextBoxColumn
-            // 
-            this.formationDataGridViewTextBoxColumn.DataPropertyName = "Formation";
-            this.formationDataGridViewTextBoxColumn.HeaderText = "Formation";
-            this.formationDataGridViewTextBoxColumn.Name = "formationDataGridViewTextBoxColumn";
-            this.formationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sessionDataGridViewTextBoxColumn.DataPropertyName = "Session";
+            this.sessionDataGridViewTextBoxColumn.HeaderText = "Session";
+            this.sessionDataGridViewTextBoxColumn.Name = "sessionDataGridViewTextBoxColumn";
+            this.sessionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FenetreAccueil
             // 
@@ -613,12 +614,12 @@
             this.Load += new System.EventHandler(this.FenetreAccueil_Load);
             this.panel1.ResumeLayout(false);
             this.panelView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelBienvenue.ResumeLayout(false);
             this.panelBienvenue.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formationBindingSource)).EndInit();
@@ -650,8 +651,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nbJourDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Intitule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
@@ -664,11 +663,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn photoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.BindingSource sessionBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFormationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intituleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sessionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdSession;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -677,5 +671,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateFinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDebutInscriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Intitule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFormationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intituleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moduleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessionDataGridViewTextBoxColumn;
     }
 }

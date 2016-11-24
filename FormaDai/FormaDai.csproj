@@ -104,6 +104,18 @@
     <Compile Include="FenetreAccueil.Designer.cs">
       <DependentUpon>FenetreAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FenetreAjouterFormation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FenetreAjouterFormation.Designer.cs">
+      <DependentUpon>FenetreAjouterFormation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FenetreAjouterModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FenetreAjouterModule.Designer.cs">
+      <DependentUpon>FenetreAjouterModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="FenetreConnect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     <Compile Include="SessionServices.cs" />
     <EmbeddedResource Include="FenetreAccueil.resx">
       <DependentUpon>FenetreAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FenetreAjouterFormation.resx">
+      <DependentUpon>FenetreAjouterFormation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FenetreAjouterModule.resx">
+      <DependentUpon>FenetreAjouterModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FenetreConnect.resx">
       <DependentUpon>FenetreConnect.cs</DependentUpon>

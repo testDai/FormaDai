@@ -112,5 +112,19 @@ namespace FormaDai
             else if (dataGridView4.Visible == true) // Sessions
                 new SessionServices().SupprLigne(dataGridView4);
         }
+
+        private void btCreer_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.Visible == true) // Formation
+            {
+                FenetreAjouterFormation fn = new FenetreAjouterFormation(dataGridView2);
+                fn.ShowDialog();
+            }
+            else if (dataGridView3.Visible == true) // Module
+            {
+                FenetreAjouterModule fn = new FenetreAjouterModule(dataGridView3);
+                fn.ShowDialog();
+            }
+        }
     }
 }
