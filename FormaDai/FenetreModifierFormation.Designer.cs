@@ -1,6 +1,6 @@
 ﻿namespace FormaDai
 {
-    partial class FenetreAjouterModule
+    partial class FenetreModifierFormation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,48 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbAjouterModule = new System.Windows.Forms.Label();
             this.txtIntitule = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtNbJour = new System.Windows.Forms.TextBox();
+            this.lbModifierFormation = new System.Windows.Forms.Label();
             this.btValider = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lbAjouterModule
-            // 
-            this.lbAjouterModule.AutoSize = true;
-            this.lbAjouterModule.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAjouterModule.ForeColor = System.Drawing.Color.White;
-            this.lbAjouterModule.Location = new System.Drawing.Point(104, 68);
-            this.lbAjouterModule.Name = "lbAjouterModule";
-            this.lbAjouterModule.Size = new System.Drawing.Size(196, 25);
-            this.lbAjouterModule.TabIndex = 0;
-            this.lbAjouterModule.Text = "Ajout d\'un module";
-            // 
             // txtIntitule
             // 
-            this.txtIntitule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIntitule.Location = new System.Drawing.Point(80, 117);
+            this.txtIntitule.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIntitule.Location = new System.Drawing.Point(103, 147);
             this.txtIntitule.Name = "txtIntitule";
-            this.txtIntitule.Size = new System.Drawing.Size(221, 27);
-            this.txtIntitule.TabIndex = 1;
+            this.txtIntitule.Size = new System.Drawing.Size(187, 28);
+            this.txtIntitule.TabIndex = 0;
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(80, 170);
+            this.txtDescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(103, 198);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(221, 100);
-            this.txtDescription.TabIndex = 2;
+            this.txtDescription.Size = new System.Drawing.Size(221, 72);
+            this.txtDescription.TabIndex = 1;
             // 
-            // txtNbJour
+            // lbModifierFormation
             // 
-            this.txtNbJour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNbJour.Location = new System.Drawing.Point(148, 295);
-            this.txtNbJour.Name = "txtNbJour";
-            this.txtNbJour.Size = new System.Drawing.Size(86, 27);
-            this.txtNbJour.TabIndex = 3;
+            this.lbModifierFormation.AutoSize = true;
+            this.lbModifierFormation.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbModifierFormation.ForeColor = System.Drawing.Color.White;
+            this.lbModifierFormation.Location = new System.Drawing.Point(76, 55);
+            this.lbModifierFormation.Name = "lbModifierFormation";
+            this.lbModifierFormation.Size = new System.Drawing.Size(248, 25);
+            this.lbModifierFormation.TabIndex = 2;
+            this.lbModifierFormation.Text = "Modifier la formation";
             // 
             // btValider
             // 
@@ -78,29 +69,28 @@
             this.btValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btValider.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btValider.ForeColor = System.Drawing.Color.Black;
-            this.btValider.Location = new System.Drawing.Point(109, 351);
+            this.btValider.Location = new System.Drawing.Point(103, 311);
             this.btValider.Name = "btValider";
-            this.btValider.Size = new System.Drawing.Size(165, 37);
-            this.btValider.TabIndex = 4;
+            this.btValider.Size = new System.Drawing.Size(158, 40);
+            this.btValider.TabIndex = 3;
             this.btValider.Text = "Enregistrer";
             this.btValider.UseVisualStyleBackColor = false;
             this.btValider.Click += new System.EventHandler(this.btValider_Click);
             // 
-            // FenetreAjouterModule
+            // FenetreModifierFormation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(448, 476);
+            this.ClientSize = new System.Drawing.Size(409, 407);
             this.Controls.Add(this.btValider);
-            this.Controls.Add(this.txtNbJour);
+            this.Controls.Add(this.lbModifierFormation);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtIntitule);
-            this.Controls.Add(this.lbAjouterModule);
             this.DoubleBuffered = true;
-            this.Name = "FenetreAjouterModule";
-            this.Text = "FenetreAjouterModule";
-            this.Load += new System.EventHandler(this.FenetreAjouterModule_Load);
+            this.Name = "FenetreModifierFormation";
+            this.Text = "FenetreModifierFormation";
+            this.Load += new System.EventHandler(this.FenetreModifierFormation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,10 +98,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbAjouterModule;
         private System.Windows.Forms.TextBox txtIntitule;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtNbJour;
+        private System.Windows.Forms.Label lbModifierFormation;
         private System.Windows.Forms.Button btValider;
     }
 }

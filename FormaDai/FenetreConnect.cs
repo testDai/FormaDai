@@ -26,7 +26,8 @@ namespace FormaDai
                 Personne p = s.GetPersonneByIdPw(txtLogin.Text, txtPassword.Text);
                 if (p == null)
                 {
-                    MessageBox.Show("Identifiants incorrects");
+                    lbError.Visible = true;
+                    txtPassword.Text = "";
                 }
                 else
                 {
@@ -37,6 +38,25 @@ namespace FormaDai
             }
             else
                 MessageBox.Show("Veuillez remplir tous les champs");
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtLogin.Text != "")
+                lbLogin.Visible = false;
+            else
+                lbLogin.Visible = true;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPassword.Text != "")
+            {
+                lbPassword.Visible = false;
+                lbError.Visible = false;
+            }
+            else
+                lbPassword.Visible = true;
         }
     }
 }

@@ -93,6 +93,36 @@ namespace FormaDai
             }
             return p;
         }
+
+        public Personne GetPersonneByMail(string mail)
+        {
+            Personne p = null;
+            using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
+            {
+                string maRequete = "SELECT * FROM Personne WHERE Mail = @mail";
+                try
+                {
+                    maConnexion.Open();
+                    using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
+                    {
+                        maCommande.Parameters.Add(new SqlParameter("@mail", mail));
+                        SqlDataReader maLecture = maCommande.ExecuteReader();
+                        if (maLecture.Read())
+                        {
+                            p = PersonneLecture(maLecture);
+                        }
+                        maLecture.Close();
+                    }
+                    maConnexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return p;
+        }
+
         //Methode pour afficher les personnes qui ont candidaté à une session. Ni la requête SQL ni la méthode n'ont été vérifiées.
         public List<Personne> GetPersonneBySession(int idSession)
         {
@@ -181,7 +211,7 @@ namespace FormaDai
         {
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "UPDATE Personne SET Nom = @nom, Prenom = @prenom, Mail = @mail, Civilite = @civilite, Adresse = @adresse, CodePostal = @codePostal, Ville = @ville, Password = @password, Telephone = @telephone WHERE Email = email";
+                string maRequete = "UPDATE Personne SET Nom = @nom, Prenom = @prenom, Mail = @mail, Civilite = @civilite, Adresse = @adresse, CodePostal = @codePostal, Ville = @ville, Password = @password, Telephone = @telephone WHERE Mail = @email";
                 try
                 {
                     maConnexion.Open();
@@ -194,6 +224,7 @@ namespace FormaDai
                     SqlParameter paramVille = new SqlParameter("@ville", System.Data.SqlDbType.VarChar);
                     SqlParameter paramPassword = new SqlParameter("@password", System.Data.SqlDbType.VarChar);
                     SqlParameter paramTelephone = new SqlParameter("@telephone", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramEmail = new SqlParameter("@email", System.Data.SqlDbType.VarChar);
                     using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
                     {
                         paramNom.Value = newNom;
@@ -205,6 +236,7 @@ namespace FormaDai
                         paramVille.Value = newVille;
                         paramPassword.Value = newPassword;
                         paramTelephone.Value = newTelephone;
+                        paramEmail.Value = email;
 
                         maCommande.Parameters.Add(paramNom);
                         maCommande.Parameters.Add(paramPrenom);
@@ -215,6 +247,7 @@ namespace FormaDai
                         maCommande.Parameters.Add(paramVille);
                         maCommande.Parameters.Add(paramPassword);
                         maCommande.Parameters.Add(paramTelephone);
+                        maCommande.Parameters.Add(paramEmail);
                         maCommande.ExecuteNonQuery();
                     }
                     maConnexion.Close();

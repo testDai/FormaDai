@@ -126,5 +126,32 @@ namespace FormaDai
                 fn.ShowDialog();
             }
         }
+
+        private void btModifier_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Visible == true) // Personne
+            {
+                Personne cible = new PersonneServices().GetPersonneByMail(dataGridView1.SelectedCells[2].Value.ToString());
+                FenetreModifierPersonne fn = new FenetreModifierPersonne(Personne, cible, dataGridView1);
+                fn.ShowDialog();
+            }
+            else if (dataGridView2.Visible == true) // Formation
+            {
+                Formation f = new FormationServices().GetFormationByIntitule(dataGridView2.SelectedCells[0].Value.ToString());
+                FenetreModifierFormation fn = new FenetreModifierFormation(dataGridView2, f);
+                fn.ShowDialog();
+            }
+            else if (dataGridView3.Visible == true) // Module
+            {
+                Module m = new ModuleServices().GetModuleByIntitule(dataGridView3.SelectedCells[0].Value.ToString());
+                FenetreAjouterModule fn = new FenetreAjouterModule(dataGridView3, m);
+                fn.ShowDialog();
+
+            }
+            else if (dataGridView4.Visible == true) // Session
+            {
+
+            }
+        }
     }
 }

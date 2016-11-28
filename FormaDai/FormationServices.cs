@@ -114,18 +114,21 @@ namespace FormaDai
         {
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "UPDATE Formation SET Intitule=@newIntitule, Description=@newDescription WHERE Intitule=intitule";
+                string maRequete = "UPDATE Formation SET Intitule=@intitule, Description=@description WHERE Intitule = @oldIntitule";
                 try
                 {
                     maConnexion.Open();
                     SqlParameter paramIntit = new SqlParameter("@intitule", System.Data.SqlDbType.VarChar);
                     SqlParameter paramDesc = new SqlParameter("@description", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramOldIntit = new SqlParameter("@oldIntitule", System.Data.SqlDbType.VarChar);
                     using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
                     {
                         paramIntit.Value = newIntitule;
                         paramDesc.Value = newDescription;
+                        paramOldIntit.Value = intitule;
                         maCommande.Parameters.Add(paramIntit);
                         maCommande.Parameters.Add(paramDesc);
+                        maCommande.Parameters.Add(paramOldIntit);
                         maCommande.ExecuteNonQuery();
                     }
                     maConnexion.Close();

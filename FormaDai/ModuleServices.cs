@@ -119,21 +119,24 @@ namespace FormaDai
         {
             using (SqlConnection maConnexion = new SqlConnection(chaineConnexion))
             {
-                string maRequete = "UPDATE Formation SET Intitule = @newIntitule, Description = @newDescription, NbJour = @newNbJour WHERE Intitule=intitule";
+                string maRequete = "UPDATE Formation SET Intitule = @newIntitule, Description = @newDescription, NbJour = @newNbJour WHERE Intitule=@intitule";
                 try
                 {
                     maConnexion.Open();
-                    SqlParameter paramIntit = new SqlParameter("@intitule", System.Data.SqlDbType.VarChar);
-                    SqlParameter paramDesc = new SqlParameter("@description", System.Data.SqlDbType.VarChar);
-                    SqlParameter paramNbJour = new SqlParameter("@nbJour", System.Data.SqlDbType.Int);
+                    SqlParameter paramIntit = new SqlParameter("@newIntitule", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramDesc = new SqlParameter("@newDescription", System.Data.SqlDbType.VarChar);
+                    SqlParameter paramNbJour = new SqlParameter("@newNbJour", System.Data.SqlDbType.Int);
+                    SqlParameter paramOldIntit = new SqlParameter("@intitule", System.Data.SqlDbType.Int);
                     using (SqlCommand maCommande = new SqlCommand(maRequete, maConnexion))
                     {
                         paramIntit.Value = newIntitule;
                         paramDesc.Value = newDescription;
                         paramNbJour.Value = newNbJour;
+                        paramOldIntit.Value = intitule;
                         maCommande.Parameters.Add(paramIntit);
                         maCommande.Parameters.Add(paramDesc);
                         maCommande.Parameters.Add(paramNbJour);
+                        maCommande.Parameters.Add(paramOldIntit);
                         maCommande.ExecuteNonQuery();
                     }
                     maConnexion.Close();

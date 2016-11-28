@@ -122,6 +122,18 @@
     <Compile Include="FenetreConnect.Designer.cs">
       <DependentUpon>FenetreConnect.cs</DependentUpon>
     </Compile>
+    <Compile Include="FenetreModifierFormation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FenetreModifierFormation.Designer.cs">
+      <DependentUpon>FenetreModifierFormation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FenetreModifierPersonne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FenetreModifierPersonne.Designer.cs">
+      <DependentUpon>FenetreModifierPersonne.cs</DependentUpon>
+    </Compile>
     <Compile Include="FenetreStagiaire.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FenetreConnect.resx">
       <DependentUpon>FenetreConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FenetreModifierFormation.resx">
+      <DependentUpon>FenetreModifierFormation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FenetreModifierPersonne.resx">
+      <DependentUpon>FenetreModifierPersonne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FenetreStagiaire.resx">
       <DependentUpon>FenetreStagiaire.cs</DependentUpon>
